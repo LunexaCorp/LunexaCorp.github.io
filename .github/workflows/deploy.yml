@@ -1,20 +1,22 @@
-name: Deploy React TS to GitHub Pages
+name: Deploy React TS
 
 on:
   push:
     branches: [ "main" ]
 
 permissions:
-  contents: write
+  contents: read
+  pages: write      
+  id-token: write   
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -23,10 +25,20 @@ jobs:
       - name: Install and Build
         run: |
           npm install
-          npm run build # Aquí es donde TypeScript se valida y compila
+          npm run build
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          folder: dist
-          branch: gh-pages
+          path: ./dist # Sube la carpeta compilada
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 # Despliega el artefacto directamente
