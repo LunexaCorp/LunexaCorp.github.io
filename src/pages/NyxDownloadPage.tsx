@@ -4,9 +4,41 @@ import { useNavigate } from "react-router-dom";
 import NyxSystemRequirements from "../components/NyxSystemRequirements";
 import NyxGeneralInformation from "../components/NyxGeneralnformation";
 
+// Definir tipos
+type OS = "Windows" | "Linux";
+type Tab = "general" | "requirements" | "docs";
+
+interface OSTabsProps {
+  activeOS: OS;
+  onSelectOS: (os: OS) => void;
+}
+
+interface DownloadButtonProps {
+  os: OS;
+}
+
+interface VersionInfoProps {
+  activeTab: Tab;
+  setActiveTab: (tab: Tab) => void;
+}
+
+interface VideoPreviewProps {
+  activeTab: Tab;
+  setActiveTab: (tab: Tab) => void;
+}
+
+interface BannerProps {
+  Component: React.ComponentType;
+}
+
+interface TabInfo {
+  name: string;
+  value: Tab;
+}
+
 // Componente para las pestañas de sistema operativo
-const OSTabs = ({ activeOS, onSelectOS }) => {
-  const systems = ["Windows", "Linux"];
+const OSTabs = ({ activeOS, onSelectOS }: OSTabsProps) => {
+  const systems: OS[] = ["Windows", "Linux"];
 
   return (
     <div className="os-tabs">
@@ -24,9 +56,7 @@ const OSTabs = ({ activeOS, onSelectOS }) => {
 };
 
 // Componente para el botón de descarga
-const DownloadButton = ({ os }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
+const DownloadButton = ({ os }: DownloadButtonProps) => {
   const getDownloadUrl = () => {
     const baseUrl =
       "https://github.com/FrancoAndreeYupanquiZapana/nyx/releases/latest/download";
@@ -76,16 +106,16 @@ const DownloadButton = ({ os }) => {
 };
 
 // Componente para la información de versión
-const VersionInfo = ({ activeTab, setActiveTab }) => {
+const VersionInfo = ({ activeTab, setActiveTab }: VersionInfoProps) => {
   const navigate = useNavigate();
 
-  const tabs = [
+  const tabs: TabInfo[] = [
     { name: "Información general", value: "general" },
     { name: "Requerimientos del sistema", value: "requirements" },
     { name: "Aprender a usar NYX", value: "docs" },
   ];
 
-  const handleTabClick = (tab) => {
+  const handleTabClick = (tab: TabInfo) => {
     if (tab.value === "docs") {
       navigate("/nyx/docs");
     } else {
@@ -111,7 +141,7 @@ const VersionInfo = ({ activeTab, setActiveTab }) => {
 };
 
 // Componente para el video demo
-const VideoPreview = ({ activeTab, setActiveTab }) => {
+const VideoPreview = ({ activeTab, setActiveTab }: VideoPreviewProps) => {
   return (
     <div className="video-preview">
       <div className="video-container">
@@ -131,10 +161,6 @@ const VideoPreview = ({ activeTab, setActiveTab }) => {
   );
 };
 
-interface BannerProps {
-  Component: React.ComponentType;
-}
-
 const UnifiedProductBanner: React.FC<BannerProps> = ({ Component }) => {
   return (
     <div className="unified-banner">
@@ -143,13 +169,10 @@ const UnifiedProductBanner: React.FC<BannerProps> = ({ Component }) => {
   );
 };
 
-// Uso:
-<UnifiedProductBanner Component={NyxGeneralInformation} />;
-
 // Componente principal de la página
 const NyxDownloadPage = () => {
-  const [activeOS, setActiveOS] = useState("Windows");
-  const [activeTab, setActiveTab] = useState("general");
+  const [activeOS, setActiveOS] = useState<OS>("Windows");
+  const [activeTab, setActiveTab] = useState<Tab>("general");
 
   return (
     <div className="nyx-download-page">

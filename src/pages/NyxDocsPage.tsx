@@ -1,6 +1,5 @@
 import React, { useRef, useCallback, useState, useEffect } from "react";
 import "./NyxDocsPage.css";
-import { Play } from "lucide-react";
 
 // Tipos
 interface VideoTutorial {
