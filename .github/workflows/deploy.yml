@@ -1,8 +1,8 @@
-name: Deploy React TS
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: [ main ]
 
 permissions:
   contents: read
@@ -43,7 +43,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
-
+          
   deploy:
     needs: build
     runs-on: ubuntu-latest
