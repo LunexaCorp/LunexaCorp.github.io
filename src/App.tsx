@@ -1,21 +1,33 @@
-import './App.css'
-import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Home from './pages/Home';
-import Nyx from './pages/Nyx';
+import "./App.css";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import NyxDownloadPage from "./pages/NyxDownloadPage";
+import NyxHeader from "./components/NyxHeader";
+import { Outlet } from "react-router-dom";
+import Nyx from "./pages/Nyx";
+import NyxDocsPage from "./pages/NyxDocsPage";
+
+const NyxLayout = () => (
+  <>
+    <NyxHeader />
+    <Outlet />
+  </>
+);
 
 function App() {
   return (
     <Router>
-      <nav style={{ padding: '1rem', background: '#1e293b' }}>
-          <Link to="/" style={{ color: 'white', marginRight: '1rem' }}>Inicio</Link>
-          <Link to="/nyx" style={{ color: '#10b981' }}>Proyecto NYX</Link>
-        </nav>
       <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/nyx" element={<Nyx />} />
-        </Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/nyx" element={<NyxLayout />}>
+          <Route index element={<Nyx />} /> 
+          <Route path="download" element={<NyxDownloadPage />} />
+          <Route path="docs" element={<NyxDocsPage />} />
+        </Route>
+        
+      </Routes>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;
