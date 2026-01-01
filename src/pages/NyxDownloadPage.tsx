@@ -29,7 +29,7 @@ const DownloadButton = ({ os }) => {
 
   const getDownloadUrl = () => {
     const baseUrl =
-      "https://github.com/LunexaCorp/LunexaCorp.github.io/releases/latest/download";
+      "https://github.com/FrancoAndreeYupanquiZapana/nyx/releases/latest/download";
     switch (os) {
       case "Windows":
         return `${baseUrl}/NYX-Windows.exe`;
