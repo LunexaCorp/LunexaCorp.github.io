@@ -1,13 +1,97 @@
+/* ==========================================
+   ESTILOS BASE GLOBALES - index.css
+   ========================================== */
+
+/* Variables CSS */
 :root {
-  --bg-color: #0f172a;      /* Azul muy oscuro */
-  --text-primary: #f8fafc;  /* Blanco grisáceo */
-  --accent-color: #10b981;  /* Esmeralda (profesional) */
-  font-family: 'Inter', system-ui, sans-serif;
+  /* Colores principales */
+  --bg-primary: #f5f5f5;
+  --bg-secondary: #ffffff;
+  --text-primary: #212121;
+  --text-secondary: #424242;
+  --text-muted: #757575;
+  --accent-color: #00bcd4;
+  --accent-hover: #0097a7;
+  --border-color: #e0e0e0;
+  
+  /* Espaciado */
+  --container-max-width: 1400px;
+  --page-padding: 40px 20px;
+  
+  /* Fuentes */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  background-color: var(--bg-color);
-  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+/* Contenedor principal */
+#root {
+  min-height: 100vh;
+}
+
+/* Links */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* Tipografía base */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bdbdbd;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9e9e9e;
+}
+
+
+.tagesschrift-regular {
+  font-family: "Tagesschrift", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
