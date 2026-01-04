@@ -148,8 +148,8 @@ const VideoPreview = ({ activeTab, setActiveTab }: VideoPreviewProps) => {
         <iframe
           width="100%"
           height="100%"
-          src="https://www.youtube.com/embed/oJH8lowsa-U?si=5V2eWAI_AI7Hb0rM&autoplay=1&mute=1&loop=1&playlist=oJH8lowsa-U"
-          title="NYX Demo"
+          src="https://www.youtube.com/embed/v_GxPkm01A8?si=YhBC8VqFEzX8FQsQ&autoplay=1&mute=1&loop=1&playlist=v_GxPkm01A8"
+          title="NYX Official Presentation"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
