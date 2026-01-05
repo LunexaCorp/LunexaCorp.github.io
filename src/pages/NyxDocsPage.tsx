@@ -78,11 +78,11 @@ const NyxDocsPage: React.FC = () => {
   const tutorials: VideoTutorial[] = [
     {
       number: 1,
-      videoUrl: "https://www.youtube.com/watch?v=WkgHkrM9fo0",
+      videoUrl: "https://youtu.be/dLquaH2kHHI",
       title: "Gestos Básicos",
       description: "Aprende los movimientos esenciales para controlar NYX",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "content: "En este tutorial de inicio rápido se visualizan los movimientos fundamentales para manejar la interfaz. El video demuestra paso a paso cómo mover el cursor con fluidez, ejecutar clics precisos, pausar el puntero, mantener el clic para arrastrar y desplegar el menú de acciones rápidas; todo mediante gestos capturados en tiempo real.",
     },
     {
       number: 2,
