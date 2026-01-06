@@ -64,7 +64,7 @@ const DownloadButton = ({ os }: DownloadButtonProps) => {
       case "Windows":
         return `${baseUrl}/NYX-Windows.exe`;
       case "Linux":
-        return `${baseUrl}/NYX.deb`;
+        return `${baseUrl}/NYX-Linux.deb`;
       default:
         return `${baseUrl}/NYX-Windows.exe`;
     }
