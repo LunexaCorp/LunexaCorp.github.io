@@ -78,7 +78,7 @@ const NyxDocsPage: React.FC = () => {
   const tutorials: VideoTutorial[] = [
     {
       number: 1,
-      videoUrl: "https://youtu.be/dLquaH2kHHI",
+      videoUrl: "https://youtu.be/GxtDHOaqnVc",
       title: "Gestos Básicos",
       description: "Aprende los movimientos esenciales para controlar NYX",
       content:
@@ -86,19 +86,19 @@ const NyxDocsPage: React.FC = () => {
     },
     {
       number: 2,
-      videoUrl: "https://www.youtube.com/watch?v=WkgHkrM9fo0",
-      title: "Gestos Personalizados",
+      videoUrl: "https://youtu.be/eKx7LhoQ3oI",
+      title: "Creación y Gestión de Perfiles",
       description: "Crea y configura tus propios gestos personalizados",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.",
+        "¡Hola! En este segundo video te enseñamos paso a paso cómo organizar tus propios perfiles de usuario. Veremos desde lo más básico —como crear, cambiar o borrar un perfil— hasta cómo elegir qué quieres que pase cuando pongas tu mano en una posición específica. El objetivo es que el sistema funcione exactamente como a ti te gusta. ¡Dale al play y empieza a personalizar tus gestos para que usar la computadora sea mucho más fácil y rápido!",
     },
     {
       number: 3,
-      videoUrl: "https://www.youtube.com/watch?v=WkgHkrM9fo0",
-      title: "Instalación del Sistema",
-      description: "Guía completa para instalar NYX en tu PC",
+      videoUrl: "https://youtu.be/v_GxPkm01A8",
+      title: "Presentación de Nyx",
+      description: "Descarga y uso de software en un minuto",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis.",
+        "¡Bienvenidos a la nueva era del control gestual! Nyx es un proyecto diseñado para que interactuar con tu pantalla sea algo natural y mágico. En esta presentación oficial, verás en acción el poder de los gestos: desde navegar por la interfaz hasta ejecutar comandos sin contacto físico. ¡Dale un vistazo a lo que Nyx puede hacer por ti!",
     },
     {
       number: 4,
